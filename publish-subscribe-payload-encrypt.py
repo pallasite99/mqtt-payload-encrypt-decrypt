@@ -42,12 +42,8 @@ client.subscribe("house/bulb1",0)#subscribe
 time.sleep(2)
 print("publishing encrypted message:",encrypted_message)
 out_message="on"
-#client1=paho.Client("", True, None, paho.MQTTv31)
-#client1.on_connect=on_connect
-#client1.on_publish=on_publish
-#client1.connect(broker,port)
+
 client.publish("house/bulb1",encrypted_message)#publish
 time.sleep(4)
-#client1.disconnect()
 client.disconnect() #disconnect
 client.loop_stop() #stop loop
